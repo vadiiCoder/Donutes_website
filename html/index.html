@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donuts Recipe</title>
+    <link rel="shortcut icon" href="../images/logod.png" type="image/x-icon">
+    <style>
+        body {
+            /* Background image styles for perfect fit */
+            background-image: url('../images/image13.jpg'); /* Your image path */
+            background-size: cover; /* Scale image to cover the entire viewport */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep background fixed while content scrolls */
+            background-color: pink; /* Fallback background color */
+
+            color: white; /* Default text color for the body */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            line-height: 1.6; /* Improved line spacing for overall body text */
+        }
+
+        /* General styles to improve readability over the background image */
+        h1, h2, h3, h4, h5, h6 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better contrast */
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px; /* Add some padding at the top */
+        }
+
+        .header-logo img {
+            max-width: 180px; /* Slightly larger logo */
+            height: auto;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto; /* Center the image */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly translucent background for logo */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for navigation */
+            padding: 15px 0;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff69b4; /* Hot pink on hover */
+            border-color: #ff69b4; /* Hot pink border on hover */
+            background-color: rgba(255, 105, 180, 0.1); /* Subtle hot pink background on hover */
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .main-heading {
+            font-size: 3.5em; /* Larger, more appropriate size for main heading */
+            margin-top: 50px;
+            text-transform: uppercase; /* Make main heading uppercase */
+            letter-spacing: 2px;
+        }
+
+        .section-heading {
+            font-size: 2.5em; /* Size for sub-headings like "Our core flavours" */
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underline effect */
+            display: block; /* Change to block to allow margin: auto to center it */
+            width: fit-content; /* Make the block only as wide as its content */
+            margin-left: auto; /* Center the block itself */
+            margin-right: auto; /* Center the block itself */
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for paragraphs */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .read-more-button a {
+            background-color: #ff1493; /* Deep pink button */
+            color: white;
+            padding: 15px 30px; /* More padding for a better button feel */
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em; /* Slightly larger text in button */
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button a:hover {
+            background-color: #c71585; /* Darker deep pink on hover */
+            transform: translateY(-3px); /* More pronounced lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        hr {
+            width: 60%;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Whiteish transparent line */
+            margin: 60px auto;
+        }
+
+        .flavor-gallery {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger min-width for grid items */
+            gap: 25px; /* More space between images */
+            max-width: 1200px; /* Wider gallery */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .flavor-gallery img {
+            width: 100%;
+            height: 220px; /* Slightly taller fixed height for consistency */
+            object-fit: cover;
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.7); /* White border for emphasis */
+        }
+
+        .flavor-gallery img:hover {
+            transform: scale(1.08); /* More pronounced enlarge on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker, more opaque background for footer */
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9em;
+            color: #ccc; /* Lighter grey for footer text */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 2.5em;
+            }
+            .section-heading {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.1em;
+                padding: 15px;
+            }
+            nav a {
+                padding: 8px 15px;
+                margin: 0 5px;
+            }
+            .read-more-button a {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .flavor-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+            .flavor-gallery img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 2em;
+            }
+            .section-heading {
+                font-size: 1.8em;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+            }
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            .flavor-gallery {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+            .flavor-gallery img {
+                height: 250px; /* Make images a bit taller when in single column */
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 16px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #c71585;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #ff69b4;
+            border-radius: 5px;
+        }
+        ::-webkit-slider-thumb:hover{
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-logo">
+        <img src="../images/logod.png" alt="Donuts Recipe Logo">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Service</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1 class="main-heading">Donuts Recipe</h1>
+    <p>We believe that simple, natural food tastes best. Our ice cream is lovingly handmade in small batches in the heart, using only simple, natural, and fresh local ingredients of adventure and discovery.</p>
+    <div class="read-more-button">
+        <a href="https://www.google.com">Read More</a>
+    </div>
+
+    <hr>
+
+    <h1 class="section-heading">Our Core Flavours</h1>
+
+    <div class="flavor-gallery">
+        <img src='../images/image01.png' alt='Donut Flavor 1'>
+        <img src='../images/image03.png' alt='Donut Flavor 3'>
+        <img src='../images/image02.png' alt='Donut Flavor 2'>
+        <img src='../images/image04.png' alt='Donut Flavor 4'>
+        <img src='../images/image05.png' alt='Donut Flavor 5'>
+        <img src='../images/image06.png' alt='Donut Flavor 6'>
+        <img src='../images/image07.png' alt='Donut Flavor 7'>
+        <img src='../images/dd89acb6-541b-48bd-aca0-13a558374935.jpg' alt='Donut Flavor 6'>
+        <img src='../images/Aprenda tudo sobre como fazer os melhores donuts….jpg' alt='Donut Flavor 7'>
+        <img src='../images/image08.jpg' alt='Donut Flavor 6'>
+        <img src='../images/image09.jpg' alt='Donut Flavor 7'>
+        <img src='../images/image10.jpg' alt='Donut Flavor 6'>
+        <img src='../images/image11.jpg' alt='Donut Flavor 7'>
+        <img src='../images/image12.jpg' alt='Donut Flavor 6'>
+        <img src='../images/image14.jpg' alt='Donut Flavor 7'>
+        <img src='../images/bg3.jpg' alt='Donut Flavor 7'>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Donuts Recipe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

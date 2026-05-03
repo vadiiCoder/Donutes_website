@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Donuts Recipe</title>
+    <link rel="shortcut icon" href="../images/logod.png" type="image/x-icon">
+    <style>
+        body {
+            /* Background image styles for perfect fit */
+            background-image: url('image13.jpg'); /* Ensure this path is correct */
+            background-size: cover; /* Scale image to cover the entire viewport */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep background fixed while content scrolls */
+            background-color: pink; /* Fallback background color */
+
+            color: white; /* Default text color for the body */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            line-height: 1.6; /* Improved line spacing for overall body text */
+        }
+
+        /* General styles to improve readability over the background image */
+        h1, h2, h3, h4, h5, h6 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Add shadow for better contrast */
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px; /* Add some padding at the top */
+        }
+
+        .header-logo img {
+            max-width: 180px; /* Slightly larger logo */
+            height: auto;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto; /* Center the image */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly translucent background for logo */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for navigation */
+            padding: 15px 0;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        a:active {
+            color: #ff69b4; /* Hot pink on hover */
+            border-color: #ff69b4; /* Hot pink border on hover */
+            background-color: rgba(255, 105, 180, 0.1); /* Subtle hot pink background on hover */
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .main-heading {
+            font-size: 3.5em; /* Larger, more appropriate size for main heading */
+            margin-top: 50px;
+            text-transform: uppercase; /* Make main heading uppercase */
+            letter-spacing: 2px;
+        }
+
+        .section-heading {
+            font-size: 2.5em; /* Size for sub-headings like "Our core flavours" */
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underline effect */
+            display: block; /* Ensures it centers correctly */
+            width: fit-content; /* Makes the underline fit the text width */
+            margin-left: auto; /* Centers the block itself */
+            margin-right: auto; /* Centers the block itself */
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for paragraphs */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .read-more-button a {
+            background-color: #ff1493; /* Deep pink button */
+            color: white;
+            padding: 15px 30px; /* More padding for a better button feel */
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em; /* Slightly larger text in button */
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button a:hover {
+            background-color: #c71585; /* Darker deep pink on hover */
+            transform: translateY(-3px); /* More pronounced lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        hr {
+            width: 60%;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Whiteish transparent line */
+            margin: 60px auto;
+        }
+
+        /* About Page Specific Styles */
+        .about-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            gap: 40px; /* Space between flex items */
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        .about-text-block {
+            flex: 1 1 45%; /* Takes about half width, allows wrapping */
+            min-width: 300px; /* Minimum width before wrapping */
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            text-align: left; /* Text aligns to left within these blocks */
+        }
+
+        .about-text-block h2 {
+            font-size: 2em;
+            margin-top: 0;
+            text-align: center; /* Center heading within the block */
+            color: #ff69b4; /* Hot pink for sub-headings */
+        }
+        .about-text-block p {
+            font-size: 1.1em;
+            text-align: left; /* Ensure paragraphs are left-aligned within blocks */
+            margin: 0 0 1em 0; /* Reset margins for paragraphs within blocks */
+            background-color: transparent; /* Remove background from inner paragraphs */
+            padding: 0; /* Remove padding from inner paragraphs */
+            box-shadow: none; /* Remove shadow from inner paragraphs */
+        }
+
+        .about-video-container {
+            flex: 1 1 45%; /* Takes about half width, allows wrapping */
+            min-width: 300px; /* Minimum width before wrapping */
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+            border: 5px solid rgba(255, 255, 255, 0.8); /* Thicker white border */
+            overflow: hidden; /* Ensures video respects border-radius */
+
+            /* NEW: Control the height of the video container */
+            max-height: 350px; /* Adjust this value as needed */
+            display: flex; /* Use flexbox to center video vertically if it's shorter */
+            align-items: center; /* Center video vertically */
+            justify-content: center; /* Center video horizontally */
+        }
+
+        .about-video-container video {
+            width: 100%;
+            height: 100%; /* Make video fill the container's height */
+            object-fit: cover; /* Crucial: crops video to fit without distortion */
+            display: block;
+            cursor: pointer;
+        }
+      
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker, more opaque background for footer */
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9em;
+            color: #ccc; /* Lighter grey for footer text */
+        }
+
+        /* Responsive adjustments for about page */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column; /* Stack content vertically */
+                align-items: center; /* Center stacked items */
+                padding: 15px;
+            }
+            .about-text-block, .about-video-container {
+                flex: 1 1 90%; /* Take full width on smaller screens */
+                min-width: unset; /* Remove min-width constraint */
+            }
+            .about-text-block h2 {
+                font-size: 1.8em;
+            }
+            .about-text-block p {
+                font-size: 1em;
+            }
+            .about-video-container {
+                border-width: 3px;
+                max-height: 250px; /* Adjust max-height for smaller screens too */
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 16px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #c71585;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #ff69b4;
+            border-radius: 5px;
+        }
+        ::-webkit-slider-thumb:hover{
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-logo">
+        <img src="../images/logod.png" alt="Donuts Recipe Logo">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Service</a>
+        <a href="contact.html">Contact</a>
+
+    </nav>
+    <div class="humburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <h1 class="main-heading">About Our Delicious Journey</h1>
+
+    <div class="about-content">
+        <div class="about-text-block">
+            <h2>Our Sweet Beginning</h2>
+            <p>At Donuts Recipe, our journey began with a simple passion: to craft the most delightful and authentic donuts imaginable. Founded in 2020, we started as a small, family-run bakery with a dream of bringing joy through every bite. We believe that true taste comes from natural, high-quality ingredients and a whole lot of love.</p>
+            <p>From the very first batch, our commitment has been to handcraft each donut with meticulous care, ensuring a perfect balance of fluffiness, flavor, and frosting. We blend traditional techniques with innovative ideas, constantly experimenting to create new and exciting taste experiences for our cherished customers.</p>
+        </div>
+        <div class="about-video-container">
+            <video loop muted autoplay playsinline controls poster="dont3.png">
+                <source src="../videos/donuts.mp4" type="video/mp4">
+                <source src="videos/donut-making.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="about-text-block">
+            <h2>Our Philosophy: Quality & Community</h2>
+            <p>We are deeply committed to using only the freshest, locally-sourced ingredients whenever possible. This dedication ensures that every donut not only tastes incredible but also supports local farmers and suppliers. We avoid artificial flavors, preservatives, and unnecessary additives, letting the natural goodness of our ingredients shine through.</p>
+            <p>Donuts Recipe is more than just a bakery; it's a community hub. We love seeing families gather, friends share laughter, and individuals find a moment of sweet bliss with our treats. We actively participate in local events and strive to create a warm, inviting atmosphere for everyone who walks through our doors or enjoys our donuts at home.</p>
+        </div>
+        <div class="about-video-container">
+            <video loop muted autoplay playsinline controls poster="Strawberry Cheesecake Stuffed Donuts Recipe.jpg">
+                <source src="../videos/donuts.mp4" type="video/mp4">
+                <source src="videos/bakery-interior.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="about-text-block">
+            <h2>The Future of Flavor</h2>
+            <p>As we grow, our core values remain unchanged. We will continue to innovate, explore new flavors, and perfect our classics, all while staying true to our roots of quality, passion, and community. We envision a future where our donuts bring smiles to even more faces, one delicious bite at a time.</p>
+            <p>Thank you for being a part of the Donuts Recipe family. We invite you to explore our menu, visit our store, or simply enjoy a moment of happiness with our handcrafted delights. Your support fuels our passion!</p>
+        </div>
+        <div class="about-video-container">
+            <video loop muted autoplay playsinline controls poster="Aprenda tudo sobre como fazer os melhores donuts….jpg">
+                <source src="../videos/choco.mp4" type="video/mp4">
+                <source src="videos/happy-customer.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Donuts Recipe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
