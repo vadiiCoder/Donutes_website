@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Donuts Recipe</title>
+    <link rel="shortcut icon" href="../images/logod.png" type="image/x-icon">
+    <style>
+        body {
+            /* Background image styles for perfect fit */
+            background-image: url('image13.jpg'); /* Ensure this path is correct */
+            background-size: cover; /* Scale image to cover the entire viewport */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep background fixed while content scrolls */
+            background-color: pink; /* Fallback background color */
+
+            color: white; /* Default text color for the body */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            line-height: 1.6; /* Improved line spacing for overall body text */
+        }
+
+        /* General styles to improve readability over the background image */
+        h1, h2, h3, h4, h5, h6 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better contrast */
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px; /* Add some padding at the top */
+        }
+
+        .header-logo img {
+            max-width: 180px; /* Slightly larger logo */
+            height: auto;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto; /* Center the image */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly translucent background for logo */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for navigation */
+            padding: 15px 0;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff69b4; /* Hot pink on hover */
+            border-color: #ff69b4; /* Hot pink border on hover */
+            background-color: rgba(255, 105, 180, 0.1); /* Subtle hot pink background on hover */
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .main-heading {
+            font-size: 3.5em; /* Larger, more appropriate size for main heading */
+            margin-top: 50px;
+            text-transform: uppercase; /* Make main heading uppercase */
+            letter-spacing: 2px;
+        }
+
+        .section-heading {
+            font-size: 2.5em; /* Size for sub-headings like "Our core flavours" */
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underline effect */
+            display: block; /* Ensures it centers correctly */
+            width: fit-content; /* Makes the underline fit the text width */
+            margin-left: auto; /* Centers the block itself */
+            margin-right: auto; /* Centers the block itself */
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for paragraphs */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .read-more-button a {
+            background-color: #ff1493; /* Deep pink button */
+            color: white;
+            padding: 15px 30px; /* More padding for a better button feel */
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em; /* Slightly larger text in button */
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button a:hover {
+            background-color: #c71585; /* Darker deep pink on hover */
+            transform: translateY(-3px); /* More pronounced lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        hr {
+            width: 60%;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Whiteish transparent line */
+            margin: 60px auto;
+        }
+
+        /* Service Page Specific Styles */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 30px; /* Space between service boxes */
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .service-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .service-box img {
+            max-width: 50%; /* Size for service icons/images */
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 3px solid #ff69b4; /* Hot pink border */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-box h2 {
+            font-size: 2em;
+            color: #ff69b4; /* Hot pink for service titles */
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-box p {
+            font-size: 1.1em;
+            color: #e0e0e0; /* Lighter grey for service descriptions */
+            margin-bottom: 0; /* Remove bottom margin from inner p */
+            background-color: transparent; /* Remove background from inner p */
+            padding: 0; /* Remove padding from inner p */
+            box-shadow: none; /* Remove shadow from inner p */
+            text-align: center; /* Ensure descriptions are centered */
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker, more opaque background for footer */
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9em;
+            color: #ccc; /* Lighter grey for footer text */
+        }
+
+        /* Responsive adjustments for service page */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr; /* Stack services on small screens */
+                padding: 15px;
+            }
+            .service-box {
+                padding: 25px;
+            }
+            .service-box h2 {
+                font-size: 1.8em;
+            }
+            .service-box p {
+                font-size: 1em;
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 16px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #c71585;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #ff69b4;
+            border-radius: 5px;
+        }
+        ::-webkit-slider-thumb:hover{
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-logo">
+        <img src="../images/logod.png" alt="Donuts Recipe Logo">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="Service.html">Service</a>
+          <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1 class="main-heading">Our Sweet Services</h1>
+    <p>Beyond our delicious donuts, we offer a range of services to make your special moments even sweeter. From custom orders to catering, we're here to add a touch of donut magic to your events!</p>
+
+    <div class="services-grid">
+        <div class="service-box">
+            <img src="../images/bg.jpg" alt="Custom Donuts Service">
+            <h2>Custom Order Donuts</h2>
+            <p>Dreaming of donuts tailored to your event? We create custom-designed donuts for birthdays, weddings, corporate events, and more. Choose your flavors, colors, and decorations!</p>
+        </div>
+
+        <div class="service-box">
+            <img src="../images/catering.jpg" alt="Donut Catering Service">
+            <h2>Event Catering</h2>
+            <p>Make your next gathering unforgettable with our donut catering service. We provide fresh, delicious donuts for parties, meetings, and celebrations of all sizes.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="../images/decorating.jpg" alt="Donut Decorating Workshops">
+            <h2>Donut Decorating Workshops</h2>
+            <p>Unleash your inner pastry artist! Join our fun and interactive workshops where you'll learn the secrets to decorating beautiful and tasty donuts.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="../images/delivery.jpg" alt="Local Delivery Service">
+            <h2>Local Delivery</h2>
+            <p>Can't make it to our bakery? Enjoy our fresh donuts delivered right to your doorstep within our local delivery zone. Perfect for a sweet treat anytime!</p>
+        </div>
+
+        <div class="service-box">
+            <img src="../images/boxes.jpg" alt="Donut Gift Boxes">
+            <h2>Donut Gift Boxes</h2>
+            <p>Surprise a loved one or thank a colleague with our beautifully packaged donut gift boxes. A delightful present for any occasion, customizable with your favorite flavors.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="../images/seasoning.jpg" alt="Seasonal Flavors">
+            <h2>Seasonal & Limited Editions</h2>
+            <p>Discover new and exciting flavors with our rotating seasonal and limited edition donuts. We use fresh, seasonal ingredients to bring you unique taste experiences throughout the year.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Donuts Recipe. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

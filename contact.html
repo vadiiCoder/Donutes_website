@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Donuts Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../images/logod.png" type="image/x-icon">
+    <style>
+        body {
+            /* Background image styles for perfect fit */
+            background-image: url('image13.jpg'); /* Ensure this path is correct */
+            background-size: cover; /* Scale image to cover the entire viewport */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep background fixed while content scrolls */
+            background-color: pink; /* Fallback background color */
+
+            color: white; /* Default text color for the body */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+            line-height: 1.6; /* Improved line spacing for overall body text */
+        }
+
+        /* General styles to improve readability over the background image */
+        h1, h2, h3, h4, h5, h6 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better contrast */
+        }
+
+        .header-logo {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px; /* Add some padding at the top */
+        }
+
+        .header-logo img {
+            max-width: 180px; /* Slightly larger logo */
+            height: auto;
+            display: block; /* Remove extra space below image */
+            margin: 0 auto; /* Center the image */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly translucent background for logo */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for navigation */
+            padding: 15px 0;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff69b4; /* Hot pink on hover */
+            border-color: #ff69b4; /* Hot pink border on hover */
+            background-color: rgba(255, 105, 180, 0.1); /* Subtle hot pink background on hover */
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .main-heading {
+            font-size: 3.5em; /* Larger, more appropriate size for main heading */
+            margin-top: 50px;
+            text-transform: uppercase; /* Make main heading uppercase */
+            letter-spacing: 2px;
+        }
+
+        .section-heading {
+            font-size: 2.5em; /* Size for sub-headings like "Our core flavours" */
+            margin-top: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Underline effect */
+            display: block; /* Ensures it centers correctly */
+            width: fit-content; /* Makes the underline fit the text width */
+            margin-left: auto; /* Centers the block itself */
+            margin-right: auto; /* Centers the block itself */
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for paragraphs */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .read-more-button a {
+            background-color: #ff1493; /* Deep pink button */
+            color: white;
+            padding: 15px 30px; /* More padding for a better button feel */
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2em; /* Slightly larger text in button */
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .read-more-button a:hover {
+            background-color: #c71585; /* Darker deep pink on hover */
+            transform: translateY(-3px); /* More pronounced lift effect */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        hr {
+            width: 60%;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.5); /* Whiteish transparent line */
+            margin: 60px auto;
+        }
+
+        /* Contact Page Specific Styles */
+        .contact-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .contact-form-block {
+            flex: 2 1 450px; /* Form takes more space */
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            text-align: left;
+        }
+
+        .contact-form-block h2 {
+            font-size: 2em;
+            color: #ff69b4;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-form-block .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form-block label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #ff69b4;
+        }
+
+        .contact-form-block input[type="text"],
+        .contact-form-block input[type="email"],
+        .contact-form-block input[type="tel"],
+        .contact-form-block textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.1); /* Lighter input background */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form-block input[type="text"]:focus,
+        .contact-form-block input[type="email"]:focus,
+        .contact-form-block input[type="tel"]:focus,
+        .contact-form-block textarea:focus {
+            border-color: #ff69b4;
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.3);
+            outline: none;
+        }
+
+        .contact-form-block textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form-block button[type="submit"] {
+            background-color: #ff1493;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: block; /* Make it a block button */
+            width: 100%; /* Full width */
+            max-width: 250px; /* Limit max width */
+            margin: 30px auto 0 auto; /* Center the button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form-block button[type="submit"]:hover {
+            background-color: #c71585;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-info-block {
+            flex: 1 1 300px; /* Info block takes less space */
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .contact-info-block h2 {
+            font-size: 2em;
+            color: #ff69b4;
+            margin-bottom: 30px;
+        }
+
+        .contact-info-block p {
+            font-size: 1.1em;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+            text-align: center; /* Ensure paragraphs are centered */
+            background-color: transparent;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .contact-info-block .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-info-block .social-icons a {
+            color: white;
+            font-size: 2.5em;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-info-block .social-icons a:hover {
+            color: #ff69b4;
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .form-status-message {
+            margin-top: 2rem;
+            font-size: 1.6rem;
+            font-weight: 500;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .form-status-message.show {
+            opacity: 1;
+        }
+
+        .form-status-message.success {
+            color: #a3ff93; /* Light green for success */
+            background-color: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+        }
+
+        .form-status-message.error {
+            color: #ff9393; /* Light red for error */
+            background-color: rgba(220, 53, 69, 0.2);
+            border: 1px solid #dc3545;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker, more opaque background for footer */
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9em;
+            color: #ccc; /* Lighter grey for footer text */
+        }
+
+        /* Responsive adjustments for contact page */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+            .contact-form-block, .contact-info-block {
+                flex: 1 1 90%;
+                min-width: unset;
+                padding: 30px;
+            }
+            .contact-form-block h2, .contact-info-block h2 {
+                font-size: 1.8em;
+            }
+            .contact-form-block label, .contact-info-block p {
+                font-size: 1em;
+            }
+        }
+        ::-webkit-scrollbar{
+            width: 16px;
+        }
+        ::-webkit-scrollbar-track{
+            background-color: #c71585;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #ff69b4;
+            border-radius: 5px;
+        }
+        ::-webkit-slider-thumb:hover{
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-logo">
+        <img src="../images/logod.png" alt="Donuts Recipe Logo">
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Service</a>
+          <a href="contact.html">Contact</a>
+    </nav>
+
+    <h1 class="main-heading">Get in Touch</h1>
+    <p>Have a question, a custom order request, or just want to say hello? We'd love to hear from you! Fill out the form below or reach out directly.</p>
+
+    <div class="contact-container">
+        <div class="contact-form-block">
+            <h2>Send Us a Message</h2>
+            <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="full_name" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address</label>
+                    <input type="email" id="emailAddress" name="_replyto" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number (Optional)</label>
+                    <input type="tel" id="phoneNumber" name="phone_number" placeholder="+123 456 7890">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="_subject" placeholder="Inquiry about custom order, catering, etc.">
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="8" placeholder="Tell us what you need!"></textarea>
+                </div>
+
+                <input type="text" name="_gotcha" style="display:none !important">
+
+                <button type="submit">Send Message</button>
+                <p id="formStatusMessage" class="form-status-message" aria-live="polite"></p>
+            </form>
+        </div>
+
+        <div class="contact-info-block">
+            <h2>Find Us Here</h2>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Sweet Street, Donutville, CA 90210</p>
+            <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            <p><i class="fas fa-envelope"></i> info@donutsrecipe.com</p>
+            <p><i class="fas fa-clock"></i> Mon-Sat: 8 AM - 6 PM | Sun: 9 AM - 4 PM</p>
+
+            <div class="social-icons">
+                <a href="https://facebook.com/donutsrecipe" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/donutsrecipe" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/donutsrecipe" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Donuts Recipe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for handling form submission feedback
+        const contactForm = document.querySelector('.contact-form');
+        const formStatusMessage = document.getElementById('formStatusMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                // IMPORTANT: Replace 'yourformid' with your actual Formspree ID
+                const formId = "YOUR_FORMSPREE_FORM_ID"; // <--- REMEMBER TO UPDATE THIS!
+                const formAction = `https://formspree.io/f/${formId}`;
+
+                const formData = new FormData(e.target);
+
+                try {
+                    const response = await fetch(formAction, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Success
+                        formStatusMessage.textContent = "Message sent successfully! We'll get back to you soon.";
+                        formStatusMessage.classList.add('show', 'success');
+                        contactForm.reset(); // Clear the form
+                    } else {
+                        // Error handling from Formspree
+                        const data = await response.json();
+                        if (data.errors) {
+                            formStatusMessage.textContent = "Oops! Something went wrong: " + data.errors.map(error => error.message).join(", ");
+                        } else {
+                            formStatusMessage.textContent = "Oops! There was an issue sending your message.";
+                        }
+                        formStatusMessage.classList.add('show', 'error');
+                    }
+                } catch (error) {
+                    // Network or other unexpected errors
+                    formStatusMessage.textContent = "A network error occurred. Please try again later.";
+                    formStatusMessage.classList.add('show', 'error');
+                }
+
+                // Hide message after a few seconds
+                setTimeout(() => {
+                    formStatusMessage.classList.remove('show', 'success', 'error');
+                    formStatusMessage.textContent = ''; // Clear text
+                }, 7000); // Message disappears after 7 seconds
+            });
+        }
+    </script>
+
+</body>
+</html>
