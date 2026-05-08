@@ -50,9 +50,10 @@ https://donutes-website.vercel.app/
 
 ---
 
-preview live
+## 🤩 preview live
 
-<img width="1130" height="636" alt="image" src="https://github.com/user-attachments/assets/48dda64b-8f9f-4234-9d5f-bca27e71e3b7" />
+<img width="1130" height="630" alt="Screenshot 2026-05-08 103506" src="https://github.com/user-attachments/assets/0cb5da88-9499-4d5a-ac35-168ac7782215" />
+
 
 ---
 
